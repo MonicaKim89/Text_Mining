@@ -1,6 +1,8 @@
+import pandas as pd
+import numpy as np
+
 import tensorflow as tf
 from tensorflow.python.client import device_lib
-
 
 import torch
 print(torch.cuda.is_available())
