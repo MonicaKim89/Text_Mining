@@ -25,6 +25,5 @@ def set_global_determinism(seed=SEED):
 
 # Call the above function with seed value
 set_global_determinism(seed=SEED)
-
 gpu_check()
 
