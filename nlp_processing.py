@@ -9,6 +9,18 @@ print(torch.cuda.is_available())
 
 
 import transformers
+import tweepy
+from tweepy import StreamListener
+from tweepy import Stream
+from konlpy.tag import Okt
+
+
+
+
+
+
+
+####setting####
 
 SEED = 1337
 
@@ -29,3 +41,5 @@ def set_global_determinism(seed=SEED):
 set_global_determinism(seed=SEED)
 gpu_check()
 
+### konlpy Jpype문제 해결 https://daewonyoon.tistory.com/386
+### JAVA_HOME https://liveyourit.tistory.com/56
