@@ -33,7 +33,12 @@ plt.rc('axes', unicode_minus=False) # 마이너스 폰트 설정
 #판다스 컬럼 다보기
 pd.set_option('display.max_columns', 100)
 
-#시각화?
+#####seaborn###
+sns.set_context("talk")
+sns.set_style("white")
+sns.set_palette("Pastel1")
+
+
 import platform
 platform.system()
 
