@@ -1,6 +1,9 @@
 import pandas as pd
 import numpy as np
 import os
+import random
+
+
 import matplotlib as plt
 import seaborn as sns
 
@@ -49,7 +52,7 @@ elif platform.system() == 'Windows': # Windows 환경 폰트 설정
     plt.rc('font', family='Malgun Gothic')
 
 # 글씨 선명하게 출력하는 설정
-%config InlineBackend.figure_format = 'retina'
+# %config InlineBackend.figure_format = 'retina'
 
 
 
@@ -77,7 +80,13 @@ from wordcloud import WordCloud
 ####setting####
 
 SEED = 1337
-
+def gpu_check():
+    print(device_lib.list_local_devices())
+    print('tf',tf.__version__)
+    print('set_global_determinism(seed=1337) 이거 꼭 해라')
+    print('set_global_determinism(seed=1337) 이거 꼭 해라')
+    print('set_global_determinism(seed=1337) 이거 꼭 해라')
+    
 def set_seeds(seed=SEED):
     os.environ['PYTHONHASHSEED']= str(seed)
     random.seed(seed)
