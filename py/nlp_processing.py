@@ -8,7 +8,7 @@ import seaborn as sns
 import seaborn as sns
 import matplotlib.pyplot as plt
 import matplotlib
-%matplotlib inline
+
 
 from matplotlib import font_manager, rc
 rc('font',family="Malgun Gothic")
