@@ -106,3 +106,51 @@ gpu_check()
 
 ### konlpy Jpype문제 해결 https://daewonyoon.tistory.com/386
 ### JAVA_HOME https://liveyourit.tistory.com/56
+
+
+###LDA###
+from gensim.models.ldamodel import LdaModel 
+from gensim.models.callbacks import CoherenceMetric 
+from gensim import corpora 
+from gensim.models.callbacks import PerplexityMetric 
+import logging 
+import pickle 
+import pyLDAvis
+
+from gensim.models.coherencemodel import CoherenceModel 
+import matplotlib.pyplot as plt
+
+import pyLDAvis.gensim
+pyLDAvis.enable_notebook()
+
+from konlpy.tag import Mecab 
+from konlpy.tag import Okt
+okt = Okt()
+from tqdm import tqdm 
+import re 
+import pickle 
+import csv
+
+from nltk.corpus import stopwords
+from nltk.stem.porter import PorterStemmer
+from nltk.tokenize import RegexpTokenizer
+from gensim import corpora, models
+from gensim.models import CoherenceModel
+import gensim
+import matplotlib.pyplot as plt
+
+import numpy as np
+import pandas as pd
+import re, nltk, spacy, gensim
+
+# Sklearn
+from sklearn.decomposition import LatentDirichletAllocation, TruncatedSVD
+from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
+from sklearn.model_selection import GridSearchCV
+from pprint import pprint
+
+# Plotting tools
+import pyLDAvis
+import pyLDAvis.sklearn
+import matplotlib.pyplot as plt
+%matplotlib inline
