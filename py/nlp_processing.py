@@ -153,4 +153,4 @@ from pprint import pprint
 import pyLDAvis
 import pyLDAvis.sklearn
 import matplotlib.pyplot as plt
-%matplotlib inline
+# %matplotlib inline
