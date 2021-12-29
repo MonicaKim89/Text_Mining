@@ -14,6 +14,46 @@ def remove_emoji(string):
                            "]+", flags=re.UNICODE)
     return emoji_pattern.sub(r'', string)
 
+def clean_text(text): 
+    """ 한글, 영문, 숫자만 남기고 제거한다. 
+    :param text: 
+    :return: 
+    """ 
+    text = text.replace(".", " ").strip() 
+    text = text.replace("·", " ").strip() 
+    pattern = '[^ ㄱ-ㅣ가-힣|0-9|a-zA-Z]+' 
+    text = re.sub(pattern=pattern, repl='', string=text) 
+    return text 
+    
+def get_nouns(tokenizer, sentence): 
+    """ 단어의 길이가 2이상인 일반명사(NNG),
+     고유명사(NNP), 외국어(SL)만을 반환한다. 
+     :param tokenizer: 
+     :param sentence: :return: """ 
+    tagged = tokenizer.nouns(sentence)
+    nouns = [s for s in tagged if len(s)>1] 
+     
+    return nouns 
+     
+     
+def tokenize(df): 
+    tokenizer = okt
+    processed_data = [] 
+    for sent in tqdm(df['cleaned_reviews']):
+        sentence = clean_text(sent.replace('\n', '').strip()) 
+        processed_data.append(get_nouns(tokenizer, sentence)) 
+        
+    return processed_data
+    
+    
+def save_processed_data(processed_data): 
+    """ 토큰 분리한 데이터를 csv로 저장 :param processed_data: :return: """ 
+    
+    with open('lsa_token_pos.csv', 'w', newline='', encoding='utf-8') as f: 
+        writer = csv.writer(f) 
+        for data in processed_data:
+             writer.writerow(data)
+             
 def stemming (text):
     morphs_list = []
     one_words = []
