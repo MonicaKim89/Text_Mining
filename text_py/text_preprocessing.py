@@ -36,15 +36,6 @@ def get_nouns(tokenizer, sentence):
     return nouns 
      
      
-# def tokenize(df): 
-#     tokenizer = okt
-#     processed_data = [] 
-#     for sent in tqdm(df['cleaned_reviews']):
-#         sentence = clean_text(sent.replace('\n', '').strip()) 
-#         processed_data.append(get_nouns(tokenizer, sentence)) 
-        
-#     return processed_data
-    
     
 def save_processed_data(processed_data): 
     """ 토큰 분리한 데이터를 csv로 저장 :param processed_data: :return: """ 
@@ -53,7 +44,7 @@ def save_processed_data(processed_data):
         writer = csv.writer(f) 
         for data in processed_data:
              writer.writerow(data)
-             
+
 def stemming (text):
     morphs_list = []
     one_words = []
