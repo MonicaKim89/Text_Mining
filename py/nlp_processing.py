@@ -61,8 +61,8 @@ elif platform.system() == 'Windows': # Windows 환경 폰트 설정
 import tensorflow as tf
 from tensorflow.python.client import device_lib
 
-import torch
-print(torch.cuda.is_available())
+# import torch
+# print(torch.cuda.is_available())
 
 
 import transformers
