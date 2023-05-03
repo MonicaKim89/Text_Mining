@@ -88,3 +88,14 @@ def stemming (text):
             result.append(i)
 
     return result
+
+
+# file_list = os.listdir(csv_path)
+# file_list_py = [file for file in file_list if file.endswith('.xlsx')]
+# df = pd.DataFrame()
+# for i in file_list:
+#     data = pd.read_excel(csv_path + i, engine='openpyxl', index_col=0)
+#     print(data.shape)
+#     df = pd.concat([df,data])
+    
+# df = df.reset_index(drop = True)
