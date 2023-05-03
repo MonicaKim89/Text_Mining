@@ -19,10 +19,13 @@ def clean_text(text):
     :param text: 
     :return: 
     """ 
+    if type(text)==float:
+        text = '노이즈'
     text = text.replace(".", " ").strip() 
     text = text.replace("·", " ").strip() 
     pattern = '[^ ㄱ-ㅣ가-힣|0-9|a-zA-Z]+' 
-    text = re.sub(pattern=pattern, repl='', string=text) 
+    text = re.sub(pattern=pattern, repl='', string=text)
+    
     return text 
     
 def get_nouns(tokenizer, sentence): 
